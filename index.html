@@ -1,0 +1,23 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Image Generator</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <form id="generateForm">
+            <label for="prompt">Enter Prompt:</label>
+            <textarea id="prompt" name="prompt" placeholder="Describe what you want to see in the image..." required></textarea>
+            <button type="button" id="submit">Generate Image</button>
+        </form>
+        <div class="image-container">
+            <img id="generatedImage" alt="Generated Image">
+        </div>
+    </div>
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
