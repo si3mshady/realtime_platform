@@ -1,23 +1,128 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Image Generator</title>
-    <link rel="stylesheet" href="./styles.css">
+    <title>Futuristic Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #1f1f1f; /* Dark background */
+            color: #ffffff; /* White text */
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            height: 100vh; /* Full viewport height */
+        }
+
+        .master-container {
+            flex: 1;
+            display: flex;
+            gap: 20px;
+        }
+
+        .left-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .right-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* White shadow */
+            background-color: #27496d; /* Bluish background */
+            text-align: center;
+            border: 2px solid #45a679; /* Green border */
+            width: 100%; /* Full width of the column */
+        }
+
+        .form-section,
+        .image-section,
+        .video-section {
+            width: 80%; /* Full width of the column */
+        }
+
+        .image-section img,
+        .video-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        input[type="submit"],
+        button {
+            padding: 8px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #45a679; /* Green background */
+            color: #ffffff; /* White text */
+            cursor: pointer;
+        }
+
+        .invisible {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <form id="generateForm">
-            <label for="prompt">Enter Prompt:</label>
-            <textarea id="prompt" name="prompt" placeholder="Describe what you want to see in the image..." required></textarea>
-            <button type="button" id="submit">Generate Image</button>
-        </form>
-        <div class="image-container">
-            <img id="generatedImage" alt="Generated Image">
+
+    <div class="master-container">
+
+        <div class="left-column">
+
+            <div class="section form-section">
+                <h2>Prompt</h2>
+                <form>
+                    <!-- <label for="dataInput">Enter Data:</label> -->
+                    <input placeholder="Describe Avatar Image" type="text" id="dataInput" name="dataInput">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+            <div class="section image-section">
+                <h2>Image</h2>
+                <img src="cube.gif" alt="Futuristic Image">
+            </div>
+
         </div>
+
+        <div class="right-column">
+
+            <div class="section video-section ">
+                <h2>Avatar</h2>
+                <!-- Placeholder image for the video section -->
+                <img src="atom.gif" alt="Video Placeholder">
+                <video class="invisible" controls>
+                    <source src="atom.gif" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <form>
+                    <!-- <label for="videoInput">Video Form Input:</label> -->
+                    <input placeholder="Enter Avatar Prompt" type="text" id="videoInput" name="videoInput">
+       
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+        </div>
+
     </div>
-    <script type="module" src="./script.js"></script>
+
 </body>
 </html>
